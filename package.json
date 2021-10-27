@@ -1,0 +1,29 @@
+{
+  "name": "ChatRoom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.36",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/uuid": "^8.3.0",
+    "@types/ws": "^7.2.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fp-ts": "^2.11.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.12",
+    "react-router-dom": "^5.2.0",
+    "uuid": "^8.3.0",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

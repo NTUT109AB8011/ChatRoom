@@ -1,0 +1,32 @@
+html{
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.LoginPage {
+  width: 98vw;
+  height: 98vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+}
+
+.LoginPage > div{
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0;
+}
+.col-centered{
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.ChattingRoom{
+  width: 100%;
+  height: 800px;
+  overflow-y: auto;
+  word-break: break-word;
+}
