@@ -9,8 +9,7 @@
 ```
 .                                
 |
-├── client                       
-|   ├── node_modules            
+├── client                            
 |   ├── public                   
 |   ├── src                     
 |   |   ├── componemts            
@@ -23,15 +22,17 @@
 |   |   ├── models     
 |   |   |   ├── messages.js        
 |   |   |   ├── user.js  
+|   |   ├── server.js
+|   |   ├── server.js 
+|   |   ├── utility.js
+|   |   ├── websocket.js  
 |   ├── models                   
 |   |   ├── messages.ts    
 |   |   ├── user.ts   
 |   ├──messagesFunction.ts
 |   ├──server.ts
-|   ├──tsconfig.json
 |   ├──utility.ts
-|   ├──websocket.ts
-├── node_modules               
+|   ├──websocket.ts            
 └── package.json   
 
 last update 21/10/28         
