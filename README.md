@@ -1,6 +1,8 @@
 | Supported Clients        | Preview                 |
 | ------------------------ | ----------------------- |
-| Web                      | <img src="./client/public/demo1.png" alt="Web Preview" width="600"/>  |
+| Web(Home)                | <img src="./client/public/demo1.png" alt="Web Preview" width="600"/>  |
+| Web(Chatroom)            | <img src="./client/public/demo3.png" alt="Web Preview" width="600"/>  |
+| DB                       | <img src="./client/public/demo2.png" alt="Web Preview" width="600"/>  |
 
 
 
