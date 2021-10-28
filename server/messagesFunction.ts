@@ -11,7 +11,7 @@ export function broadCastMessage(message: any, ws: CustomWebsocket) {
         email: ws.connectionID,
         subject: message.subject,
         message: message.message,
-        date: Date.now()
+        date:Date.now()
     })
     NewMessage.save()
     for (let i = 0; i < clients.length; i++) {
@@ -20,6 +20,7 @@ export function broadCastMessage(message: any, ws: CustomWebsocket) {
             subject: message.subject,
             message: message.message,
             user: ws.connectionID,
+            date:Date.now(),
             intent: 'chat'
 
         }))

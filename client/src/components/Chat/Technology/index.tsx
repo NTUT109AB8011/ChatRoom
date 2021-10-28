@@ -111,7 +111,7 @@ export default function Chat() {
 
     return (
         <div className="col-centered">
-            <h1>Chat Page</h1>
+            <h1>Technology Chat</h1>
             <h2 id={'a'}></h2>
             <div className='ChattingRoom'>
                 {chatMessages.map((message, index) => {

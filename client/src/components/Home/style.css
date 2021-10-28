@@ -26,7 +26,7 @@ html{
 }
 .ChattingRoom{
   width: 100%;
-  height: 800px;
+  height: 750px;
   overflow-y: auto;
   word-break: break-word;
 }

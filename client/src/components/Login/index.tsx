@@ -44,7 +44,7 @@ export default function Login() {
         if (res.status === "ok") {
             localStorage.setItem('token', res.data)
             alert('You are logged in')
-            history.push('/chat')
+            history.push('/menu')
         } else {
             alert(res.error)
         }
