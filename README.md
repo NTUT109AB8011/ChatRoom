@@ -5,6 +5,17 @@
 | MongoDB                  | <img src="./client/public/demo3.png" alt="Web Preview" width="600"/>  |
 
 
+### Front-end:
+
+* React
+* React-hook
+* TypeScript
+
+### Backend:
+
+* Node/Express
+* MongoDB/Mongoose
+* WebSocket
 
 ### Folder structure
 
@@ -24,7 +35,7 @@
 |   |   ├── models     
 |   |   |   ├── messages.js        
 |   |   |   ├── user.js  
-|   |   ├── server.js
+|   |   ├── messagesFunction.js
 |   |   ├── server.js 
 |   |   ├── utility.js
 |   |   ├── websocket.js  
