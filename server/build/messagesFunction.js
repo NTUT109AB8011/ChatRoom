@@ -25,6 +25,7 @@ function broadCastMessage(message, ws) {
             subject: message.subject,
             message: message.message,
             user: ws.connectionID,
+            date: String(new Date()),
             intent: 'chat'
         }));
     }

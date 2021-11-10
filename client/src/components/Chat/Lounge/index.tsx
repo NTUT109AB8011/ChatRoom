@@ -37,7 +37,8 @@ export default function Chat() {
     const [wsRef, setWsRef] = useState<null | WebSocket>(null)
     const [chatMessages, setChatMessages] = useState<Message[]>([])
     const history = useHistory();
-    const [datMessage, setdatMessage] = useState("")
+    const [dateMessage, setdatEMessage] = useState("")
+
 
 
     function sendMessage() {
@@ -45,10 +46,11 @@ export default function Chat() {
             // websoket not connected
             return
         }
-        wsRef.send(JSON.stringify({ subject: Subject, message: chatMessage, intent: 'chat' }))
+        wsRef.send(JSON.stringify({ subject: Subject, message: chatMessage, date:dateMessage,intent: 'chat' }))
         //alert("123")
         setChatMessage("")
         setSubject("")
+        setdatEMessage("")
     }
 
     async function loginUser() {
@@ -133,7 +135,7 @@ export default function Chat() {
                                             {message.message}
                                         </Typography>
                                         {" - " + message.user}
-                                        {" - " +Dat}
+                                        {" - " + message.date}
                                     </React.Fragment>
                                 }
                             />

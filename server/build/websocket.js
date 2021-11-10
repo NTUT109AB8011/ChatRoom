@@ -21,6 +21,7 @@ wss.on('connection', function connection(ws) {
             return;
         }
         if (message.intent === 'chat') {
+
             messagesFunction_1.broadCastMessage(message, ws);
         }
         else if (message.intent === 'old-messages') {
@@ -31,6 +32,9 @@ wss.on('connection', function connection(ws) {
         }
     });
 });
+
+
+
 server.on('upgrade', function upgrade(request, socket, head) {
     const token = request.url.slice(1);
     let email = '';
