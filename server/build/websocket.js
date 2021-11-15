@@ -12,6 +12,7 @@ const server = http_1.default.createServer();
 const wss = new ws_1.default.Server({ noServer: true });
 wss.on('connection', function connection(ws) {
     messagesFunction_1.clients.push(ws);
+    console.log(ws.connectionID,connection.length);
     ws.on('close', () => {
         messagesFunction_1.setClients(messagesFunction_1.clients.filter((generalSocket) => generalSocket.connectionID !== ws.connectionID));
     });
@@ -31,6 +32,13 @@ wss.on('connection', function connection(ws) {
             messagesFunction_1.retrieveAndSentMessage(ws, count);
         }
     });
+    // ws.on('disconnect',function (ws){
+    //     if(!ws.connectionID) return;
+    //     user.splice(user.indexOf(ws.connectionID),1);
+    //     handleUpgrade();
+    //     connections.splice(connection.indexOf(ws),1);
+    //     console.log('321',connection.length);
+    // });
 });
 
 
