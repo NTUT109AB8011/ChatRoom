@@ -18,6 +18,8 @@ function processMessage(payload: string) {
         return null
     }
 }
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -40,13 +42,13 @@ export default function Chat() {
     const [dateMessage, setdatEMessage] = useState("")
 
 
+
     function sendMessage() {
         if (wsRef?.readyState !== WebSocket.OPEN) {
             // websoket not connected
             return
         }
         wsRef.send(JSON.stringify({ subject: Subject, message: chatMessage, date:dateMessage,intent: 'chat' }))
-        //alert("123")
         setChatMessage("")
         setSubject("")
         setdatEMessage("")
@@ -54,8 +56,7 @@ export default function Chat() {
 
     async function loginUser() {
 
-
-        history.push('./')
+        history.push('././')
     }
 
     useEffect(() => {
@@ -63,7 +64,7 @@ export default function Chat() {
         const ws = new WebSocket('ws://140.124.93.194:1338/' + localStorage.getItem('token'))
 
         ws.addEventListener('open', () => {
-
+                console.log('連線開啟')
                 ws.send(JSON.stringify({
                     intent: 'old-messages',
                     count: 10
@@ -71,12 +72,14 @@ export default function Chat() {
             }, { once: true }
         )
 
+
+
         ws.addEventListener('error', () => {
             history.replace('/login?authError')
         })
 
         ws.addEventListener('message', (event) => {
-            //const ws = new WebSocket('ws://140.124.93.194:1338/' + localStorage.getItem('token'))
+
 
             const data = event.data
             const message: any = processMessage(data)
@@ -90,7 +93,8 @@ export default function Chat() {
                 const a=document.getElementById('a')
                 // @ts-ignore
                 a.textContent=message.user+'傳送新訊息'}
-            //     } else if (message.intent === 'old-messages') {
+
+            // else if (message.intent === 'old-messages') {
             //         setChatMessages(
             //             message.data.map((item: any) => {
             //                 return {
@@ -102,17 +106,27 @@ export default function Chat() {
             //         )
             // }
         })
+        ws.addEventListener('close', () => {
+            console.log('連結關閉')
+        })
+
         setWsRef(ws)
         return () => {
             ws.close()
         }
-    }, [])
 
-    const Dat= new Date().toLocaleString()
+    }, [])
 
     return (
         <div className="col-centered">
-            <h1>Chat Page</h1>
+            <h1>Chat</h1>
+            <div>
+                <button onClick={()=>history.push('./'+'Math')} className={'button'}>Math</button>
+                <button onClick={()=>history.push('./'+'Technology')} className={'button'}>Technology</button>
+                <button onClick={()=>history.push('./'+'Lounge')} className={'button'}>Lounge</button>
+                <button onClick={()=>history.push('./'+'Programming')} className={'button'}>Programming</button>
+                <button onClick={()=>history.push('./'+'Physics')} className={'button'}>Physics</button>
+            </div>
             <h2 id={'a'}></h2>
             <div className='ChattingRoom'>
                 {chatMessages.map((message, index) => {

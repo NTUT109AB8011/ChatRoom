@@ -12,9 +12,12 @@ const server = http_1.default.createServer();
 const wss = new ws_1.default.Server({ noServer: true });
 wss.on('connection', function connection(ws) {
     messagesFunction_1.clients.push(ws);
-    console.log(ws.connectionID,connection.length);
+    console.log(ws.connectionID,'join');
+    // ws.emit(ws.connectionID,'log in')
     ws.on('close', () => {
         messagesFunction_1.setClients(messagesFunction_1.clients.filter((generalSocket) => generalSocket.connectionID !== ws.connectionID));
+        console.log(ws.connectionID,'leave');
+        // ws.emit(ws.connectionID,'leave')
     });
     ws.on('message', function incoming(payload) {
         const message = utility_1.processMessage(payload.toString());
@@ -32,13 +35,6 @@ wss.on('connection', function connection(ws) {
             messagesFunction_1.retrieveAndSentMessage(ws, count);
         }
     });
-    // ws.on('disconnect',function (ws){
-    //     if(!ws.connectionID) return;
-    //     user.splice(user.indexOf(ws.connectionID),1);
-    //     handleUpgrade();
-    //     connections.splice(connection.indexOf(ws),1);
-    //     console.log('321',connection.length);
-    // });
 });
 
 

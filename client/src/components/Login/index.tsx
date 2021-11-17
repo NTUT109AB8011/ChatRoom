@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Login() {
     const classes = useStyles();
     const [spacing, setSpacing] = React.useState<GridSpacing>(5);
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const history = useHistory()
@@ -48,10 +47,6 @@ export default function Login() {
         } else {
             alert(res.error)
         }
-
-
-
-
         console.log(res)
     }
 
