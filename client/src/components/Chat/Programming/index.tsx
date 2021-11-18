@@ -119,7 +119,7 @@ export default function Chat() {
 
     return (
         <div className="col-centered">
-            <h1>Programming Chat</h1>
+            <h1 className ="col" >Programming Chat</h1>
             <div>
                 <button onClick={()=>history.push('./'+'Math')} className={'button'}>Math</button>
                 <button onClick={()=>history.push('./'+'Lounge')} className={'button'}>Lounge</button>

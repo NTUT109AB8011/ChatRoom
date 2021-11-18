@@ -5,6 +5,14 @@
     max-width: 100vw;
     max-height: 100vh;
     display: flex;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    /*background:repeating-conic-gradient(*/
+    /*        #fff 0,*/
+    /*        #fff 90deg,*/
+    /*        #000 90deg,*/
+    /*        #000 180deg*/
+    /*);*/
+    /*background-size:20% 20%*/
   }
   
 .LoginForm > div{

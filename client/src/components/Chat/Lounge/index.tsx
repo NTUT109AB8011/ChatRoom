@@ -63,6 +63,8 @@ export default function Chat() {
 
         const ws = new WebSocket('ws://140.124.93.194:1338/' + localStorage.getItem('token'))
 
+
+
         ws.addEventListener('open', () => {
             console.log('連線開啟')
             ws.send(JSON.stringify({
@@ -119,7 +121,7 @@ export default function Chat() {
 
     return (
         <div className="col-centered">
-            <h1>Lounge Chat</h1>
+            <h1 className ="col" >Lounge Chat</h1>
             <div>
                 <button onClick={()=>history.push('./'+'Math')} className={'button'}>Math</button>
                 <button onClick={()=>history.push('./'+'Programming')} className={'button'}>Programming</button>
@@ -132,7 +134,7 @@ export default function Chat() {
                     return (
                         <ListItem key={index} alignItems="flex-start">
                             <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                <Avatar alt={message.user} src="/static/images/avatar/1.jpg" />
                             </ListItemAvatar>
                             <ListItemText
                                 primary={message.subject}

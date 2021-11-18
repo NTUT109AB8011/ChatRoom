@@ -57,7 +57,6 @@ export default function Login() {
 
         <div className="LoginForm">
             <Grid className={classes.root} container spacing={spacing} direction="column" alignItems="center" justify="center" >
-
                 <Grid item xs={10} sm={8}>
                     <Card className={classes.paper} >
                         <CardContent>
